@@ -1,10 +1,25 @@
 import React from "react";
 import { useEffect } from "react";
 import { connect } from "react-redux";
+import Button from "@material-ui/core/Button";
+import {useHistory} from "react-router-dom";
+
 
 const HomePage = (props) => {
   useEffect(() => {}, []);
-  return <div></div>;
+  const history = useHistory();
+  return <div>Hello
+    <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            onClick = {()=>{
+              history.push('/login')
+            }}
+          >
+            Sign out
+          </Button>
+  </div>;
 };
 
 const mapStateToProps = (state) => ({
